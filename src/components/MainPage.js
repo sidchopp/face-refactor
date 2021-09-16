@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import LeftPartImage from './LeftPartImage'
 import RightPartSignIn from './RightPartSignIn'
+import ImageLinkForm from './ImageLinkForm';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +25,7 @@ function MainPage() {
       <CssBaseline />
       <LeftPartImage />
       <RightPartSignIn />
+      <ImageLinkForm />
     </Grid>
   )
 }
