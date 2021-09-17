@@ -21,12 +21,13 @@ function MainPage() {
   const classes = useStyles();
 
   //states
-  const [input, setInput] = useState('');
-  const [imageURL, setImageURL] = useState(" ");
-  const [boundingBox, setBoundingBox] = useState({});
-  const [errorMessage, setErrorMessage] = useState("")
+  // const [input, setInput] = useState('');
+  // const [imageURL, setImageURL] = useState(" ");
+  // const [boundingBox, setBoundingBox] = useState({});
+  // const [errorMessage, setErrorMessage] = useState("")
 
   //Event Handlers
+
   function onInputChange(e) {
     e.preventDefault();
     console.log(e.target.value);
@@ -34,17 +35,10 @@ function MainPage() {
     //setUserInput(e.target.value)
   }
 
-  // function onButtonSubmit(e) {
-  //   e.preventDefault();
-  //   console.log('I m clicked');
-  // }
-
   function onButtonSubmit(e) {
     e.preventDefault();
     console.log('I m clicked');
   }
-
-
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -53,7 +47,7 @@ function MainPage() {
       <RightPartSignIn />
       <ImageLinkForm
         onInputChange={onInputChange}
-        OnButtonSubmit={onButtonSubmit}
+        onButtonSubmit={onButtonSubmit}
       />
     </Grid>
   )

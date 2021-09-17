@@ -1,5 +1,3 @@
-
-
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -39,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
 function ImageLinkForm({ onInputChange, onButtonSubmit }) {
   const classes = useStyles();
 
-
-
-
   return (
     // Add this as an attribute in Grid -->  component={Paper}
     <Grid item xs={12} sm={8} md={12} elevation={6} square>
@@ -56,13 +51,11 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
             id="url"
             label=" Enter the URL"
             name="url"
-
             autoFocus
             onChange={onInputChange}
           />
 
           <Button
-
             type="button"
             fullWidth
             variant="contained"
@@ -74,12 +67,8 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
             Detect
           </Button>
           <Grid container>
-
           </Grid>
           <Box mt={10}>
-
-
-
           </Box>
         </form>
       </div>
