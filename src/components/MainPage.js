@@ -34,6 +34,7 @@ function MainPage() {
   const [boundingBox, setBoundingBox] = useState({});
   const [errorMessage, setErrorMessage] = useState("")
   const [route, setRoute] = useState('hom')
+  const [isSignedIn, setIsSignedIn] = useState(false)
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -90,11 +91,11 @@ function MainPage() {
 
   function onRouteChange(route) {
     if (route === 'signout') {
-      this.setState({ isSignedIn: false })
+      setIsSignedIn(false)
     } else if (route === 'home') {
-      this.setState({ isSignedIn: true })
+      setIsSignedIn(true)
     }
-    this.setState({ route: route });
+    setRoute(route)
   }
   return (
     <>
