@@ -39,40 +39,39 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
 
   return (
     // Add this as an attribute in Grid -->  component={Paper}
-    <Grid item xs={12} sm={8} md={12} elevation={6} square>
-      <div className={classes.paper}>
+    // <Grid item xs={12} sm={8} md={12} elevation={6} square>
+    <div className={classes.paper}>
 
-        <form className={classes.form} noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="url"
-            label=" Enter the URL"
-            name="url"
-            autoFocus
-            onChange={onInputChange}
-          />
+      <form className={classes.form} noValidate>
+        <TextField
+          variant="outlined"
+          margin="normal"
+          required
+          fullWidth
+          id="url"
+          label=" Enter the URL"
+          name="url"
+          autoFocus
+          onChange={onInputChange}
+        />
 
-          <Button
-            type="button"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-            startIcon={<SearchIcon />}
-            onClick={onButtonSubmit}
-          >
-            Detect
-          </Button>
-          <Grid container>
-          </Grid>
-          <Box mt={10}>
-          </Box>
-        </form>
-      </div>
-    </Grid>
+        <Button
+          type="button"
+          fullWidth
+          variant="contained"
+          color="primary"
+          className={classes.submit}
+          startIcon={<SearchIcon />}
+          onClick={onButtonSubmit}
+        >
+          Detect
+        </Button>
+        <Grid container>
+        </Grid>
+
+      </form>
+    </div>
+    // </Grid>
   )
 }
 

@@ -33,7 +33,7 @@ function MainPage() {
   const [imageURL, setImageURL] = useState(" ");
   const [boundingBox, setBoundingBox] = useState({});
   const [errorMessage, setErrorMessage] = useState("")
-  const [route, setRoute] = useState('home')
+  const [route, setRoute] = useState('hom')
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
