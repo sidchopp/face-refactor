@@ -48,10 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 function RightPartSignIn({ onRouteChange }) {
   const classes = useStyles();
-
-
   return (
-
     <Grid style={{ background: '#ED820E ' }} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

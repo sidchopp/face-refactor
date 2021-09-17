@@ -58,13 +58,11 @@ function MainPage() {
       rightCol: width - (clarifaiFace.right_col * width),
       bottomRow: height - (clarifaiFace.bottom_row * height)
     }
-
   }
 
   function displayFaceBox(box) {
     console.log(box);
     setBoundingBox(box)
-
   }
 
   //Event Handlers
@@ -83,7 +81,6 @@ function MainPage() {
     //To make the state value of imageURL equals to the userInput(or what we write in the input field)
     setImageURL(userInput)
 
-
     // face detect api using FACE_DETECT_MODEL is predicting our userInput state value
     app.models.predict(Clarifai.FACE_DETECT_MODEL, userInput)
       .then(function (response) {
@@ -96,7 +93,7 @@ function MainPage() {
   }
 
   function onRouteChange(route) {
-    if (route === 'signout') {
+    if (route === 'signOut') {
       setIsSignedIn(false)
     } else if (route === 'home') {
       setIsSignedIn(true)
@@ -105,15 +102,6 @@ function MainPage() {
   }
   return (
     <>
-
-      {/* <LeftPartImage /> */}
-
-
-      {/* <RightPartSignIn />
-        <ImageLinkForm
-          onInputChange={onInputChange}
-          onButtonSubmit={onButtonSubmit}
-        /> */}
       {route === 'home'
         ? <div>
           <ImageLinkForm
@@ -130,15 +118,8 @@ function MainPage() {
               <RightPartSignIn onRouteChange={onRouteChange} />
             </Grid>
             : <Register onRouteChange={onRouteChange} />
-
         )
       }
-
-
-
-      {/* <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} /> */}
-
-
     </>
   )
 }

@@ -86,7 +86,7 @@ export default function Register({ onRouteChange }) {
               sx={{ mt: 3, mb: 2 }}
               onClick={onRouteChange}
             >
-              Submit
+              Register
             </Button>
             <Grid container>
 

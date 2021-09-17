@@ -50,8 +50,6 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange }) {
       <Typography component="h1" variant="h5">
         Welcome
       </Typography>
-
-
       <form className={classes.form} noValidate>
         <TextField
           variant="outlined"
@@ -64,7 +62,6 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange }) {
           autoFocus
           onChange={onInputChange}
         />
-
         <Button
           type="button"
           fullWidth
@@ -76,10 +73,8 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange }) {
         >
           Detect
         </Button>
-
         <Grid container>
         </Grid>
-
       </form>
       <Button
         type="button"
