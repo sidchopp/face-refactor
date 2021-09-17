@@ -70,7 +70,7 @@ function MainPage() {
   function onButtonSubmit(e) {
     e.preventDefault();
 
-    console.log(' I m clicked');
+    // console.log(' I m clicked');
     //To make the state value of imageURL equals to the userInput(or what we write in the input field)
     setImageURL(userInput)
 
@@ -82,15 +82,8 @@ function MainPage() {
         // do something with response
         console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         displayFaceBox(faceLocation(response))
-      },
-        function (err) {
-          // there was an error
-          console.log(err.message);
-          const ErrorMessage = err.message;
-          setErrorMessage(`OOOPSS!!:  ${ErrorMessage}. Please Refresh the Page and try again. If the problem still persists,try with another picture.`);
-
-        }
-      );
+      }
+      ).catch(err => console.log(err));
   }
 
   return (
