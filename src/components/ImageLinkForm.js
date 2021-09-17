@@ -6,6 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+//import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
@@ -42,6 +44,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
     // <Grid item xs={12} sm={8} md={12} elevation={6} square>
     <div className={classes.paper}>
 
+
       <form className={classes.form} noValidate>
         <TextField
           variant="outlined"
@@ -66,10 +69,21 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
         >
           Detect
         </Button>
+
         <Grid container>
         </Grid>
 
       </form>
+      <Button
+        type="button"
+        variant="contained"
+        color="warning"
+        className={classes.submit}
+        endIcon={<ExitToAppIcon />}
+        onClick={onButtonSubmit}
+      >
+        Sign Out
+      </Button>
     </div>
     // </Grid>
   )

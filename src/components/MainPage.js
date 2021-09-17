@@ -33,7 +33,7 @@ function MainPage() {
   const [imageURL, setImageURL] = useState(" ");
   const [boundingBox, setBoundingBox] = useState({});
   const [errorMessage, setErrorMessage] = useState("")
-  const [route, setRoute] = useState('hom')
+  const [route, setRoute] = useState('home')
   const [isSignedIn, setIsSignedIn] = useState(false)
 
   function faceLocation(data) {

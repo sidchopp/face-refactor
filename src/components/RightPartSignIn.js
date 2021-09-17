@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function RightPartSignIn() {
+function RightPartSignIn({ onRouteChange }) {
   const classes = useStyles();
 
 
@@ -92,7 +92,7 @@ function RightPartSignIn() {
             color="primary"
             className={classes.submit}
             startIcon={<HowToRegIcon />}
-          // onClick={onSubmitSignIn}
+            onClick={onRouteChange}
           >
             Sign In
           </Button>
