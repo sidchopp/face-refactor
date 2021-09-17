@@ -5,12 +5,13 @@ import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 //import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -43,6 +44,12 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange }) {
     // Add this as an attribute in Grid -->  component={Paper}
     // <Grid item xs={12} sm={8} md={12} elevation={6} square>
     <div className={classes.paper}>
+      <Avatar className={classes.avatar}>
+        <EmojiEmotionsIcon />
+      </Avatar>
+      <Typography component="h1" variant="h5">
+        Welcome
+      </Typography>
 
 
       <form className={classes.form} noValidate>

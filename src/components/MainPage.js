@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 }));
 
 // Clarifai API
