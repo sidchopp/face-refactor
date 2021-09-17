@@ -10,6 +10,7 @@ import Clarifai from 'clarifai'
 
 import LeftPartImage from './LeftPartImage'
 import RightPartSignIn from './RightPartSignIn'
+import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
 
@@ -32,6 +33,7 @@ function MainPage() {
   const [imageURL, setImageURL] = useState(" ");
   const [boundingBox, setBoundingBox] = useState({});
   const [errorMessage, setErrorMessage] = useState("")
+  const [route, setRoute] = useState('home')
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -86,18 +88,47 @@ function MainPage() {
       ).catch(err => console.log(err));
   }
 
+  function onRouteChange(route) {
+    if (route === 'signout') {
+      this.setState({ isSignedIn: false })
+    } else if (route === 'home') {
+      this.setState({ isSignedIn: true })
+    }
+    this.setState({ route: route });
+  }
   return (
     <>
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
-        <LeftPartImage />
-        <RightPartSignIn />
+        {/* <LeftPartImage /> */}
+
+
+        {/* <RightPartSignIn />
         <ImageLinkForm
           onInputChange={onInputChange}
           onButtonSubmit={onButtonSubmit}
-        />
+        /> */}
+        {route === 'home'
+          ? <div>
+            <ImageLinkForm
+              onInputChange={onInputChange}
+              onButtonSubmit={onButtonSubmit}
+            />
+            <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} />
+          </div>
+          : (
+            route === 'signIn'
+              ? <><LeftPartImage />
+                <RightPartSignIn onRouteChange={onRouteChange} /></>
+              : <Register onRouteChange={onRouteChange} />
+          )
+        }
+
       </Grid>
-      {errorMessage ? <div>{errorMessage}</div> : <div style={{ position: 'relative', left: "-150px" }} className={classes.submit}><FaceRecognition boundingBox={boundingBox} imageURL={imageURL} /></div>}
+
+      {/* <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} /> */}
+
+
     </>
   )
 }
