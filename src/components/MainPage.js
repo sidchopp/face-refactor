@@ -90,11 +90,11 @@ function MainPage() {
   }
 
   function onRouteChange(route) {
-    // if (route === 'signout') {
-    //   setIsSignedIn(false)
-    // } else if (route === 'home') {
-    //   setIsSignedIn(true)
-    // }
+    if (route === 'signout') {
+      setIsSignedIn(false)
+    } else if (route === 'home') {
+      setIsSignedIn(true)
+    }
     setRoute(route)
   }
   return (

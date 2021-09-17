@@ -98,7 +98,7 @@ function RightPartSignIn({ onRouteChange }) {
           </Button>
           <Grid container>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" onClick={() => onRouteChange('register')} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
