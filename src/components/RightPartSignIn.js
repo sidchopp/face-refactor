@@ -10,6 +10,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import HowToRegIcon from '@material-ui/icons/HowToReg';
+import Container from '@material-ui/core/Container';
 
 
 // Components
@@ -43,14 +44,27 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  heroContent: {
+    // backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(1, 0, 4),
+  },
+
 }));
 
 
 function RightPartSignIn({ onRouteChange }) {
   const classes = useStyles();
   return (
+
     <Grid style={{ background: '#ED820E ' }} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
       <div className={classes.paper}>
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              Face Detection
+            </Typography>
+          </Container>
+        </div>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
         </Avatar>
