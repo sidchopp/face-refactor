@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import HowToRegIcon from '@material-ui/icons/HowToReg';
 import Container from '@material-ui/core/Container';
+import "animate.css"
 
 
 // Components
@@ -60,7 +61,7 @@ function RightPartSignIn({ onRouteChange }) {
       <div className={classes.paper}>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className="animate__animated animate__pulse">
               Face Detection
             </Typography>
           </Container>
