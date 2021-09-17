@@ -1,3 +1,5 @@
+
+
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -34,11 +36,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function ImageLinkForm() {
+function ImageLinkForm({ onInputChange, onButtonSubmit }) {
   const classes = useStyles();
 
+
+
+
   return (
-    <Grid item xs={12} sm={8} md={12} component={Paper} elevation={6} square>
+    // Add this as an attribute in Grid -->  component={Paper}
+    <Grid item xs={12} sm={8} md={12} elevation={6} square>
       <div className={classes.paper}>
 
         <form className={classes.form} noValidate>
@@ -52,17 +58,18 @@ function ImageLinkForm() {
             name="url"
 
             autoFocus
-          //onChange={onInputChange}
+            onChange={onInputChange}
           />
 
           <Button
+
             type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
             startIcon={<SearchIcon />}
-          // onClick={onSubmitSignIn}
+            onClick={onButtonSubmit}
           >
             Detect
           </Button>

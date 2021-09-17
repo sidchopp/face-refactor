@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -20,12 +20,41 @@ const useStyles = makeStyles((theme) => ({
 function MainPage() {
   const classes = useStyles();
 
+  //states
+  const [input, setInput] = useState('');
+  const [imageURL, setImageURL] = useState(" ");
+  const [boundingBox, setBoundingBox] = useState({});
+  const [errorMessage, setErrorMessage] = useState("")
+
+  //Event Handlers
+  function onInputChange(e) {
+    e.preventDefault();
+    console.log(e.target.value);
+    // To make the state value of userInput equals what we write in the input field
+    //setUserInput(e.target.value)
+  }
+
+  // function onButtonSubmit(e) {
+  //   e.preventDefault();
+  //   console.log('I m clicked');
+  // }
+
+  function onButtonSubmit(e) {
+    e.preventDefault();
+    console.log('I m clicked');
+  }
+
+
+
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <LeftPartImage />
       <RightPartSignIn />
-      <ImageLinkForm />
+      <ImageLinkForm
+        onInputChange={onInputChange}
+        OnButtonSubmit={onButtonSubmit}
+      />
     </Grid>
   )
 }
