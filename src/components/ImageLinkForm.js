@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function ImageLinkForm({ onInputChange, onButtonSubmit }) {
+function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange }) {
   const classes = useStyles();
 
   return (
@@ -80,7 +80,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit }) {
         color="warning"
         className={classes.submit}
         endIcon={<ExitToAppIcon />}
-        onClick={onButtonSubmit}
+        onClick={() => onRouteChange('signIn')}
       >
         Sign Out
       </Button>

@@ -92,7 +92,7 @@ function RightPartSignIn({ onRouteChange }) {
             color="primary"
             className={classes.submit}
             startIcon={<HowToRegIcon />}
-            onClick={onRouteChange}
+            onClick={() => onRouteChange('home')}
           >
             Sign In
           </Button>

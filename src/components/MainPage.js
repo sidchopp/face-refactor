@@ -33,7 +33,7 @@ function MainPage() {
   const [imageURL, setImageURL] = useState(" ");
   const [boundingBox, setBoundingBox] = useState({});
   const [errorMessage, setErrorMessage] = useState("")
-  const [route, setRoute] = useState('home')
+  const [route, setRoute] = useState('signIn')
   const [isSignedIn, setIsSignedIn] = useState(false)
 
   function faceLocation(data) {
@@ -90,11 +90,11 @@ function MainPage() {
   }
 
   function onRouteChange(route) {
-    if (route === 'signout') {
-      setIsSignedIn(false)
-    } else if (route === 'home') {
-      setIsSignedIn(true)
-    }
+    // if (route === 'signout') {
+    //   setIsSignedIn(false)
+    // } else if (route === 'home') {
+    //   setIsSignedIn(true)
+    // }
     setRoute(route)
   }
   return (
@@ -113,6 +113,7 @@ function MainPage() {
           <ImageLinkForm
             onInputChange={onInputChange}
             onButtonSubmit={onButtonSubmit}
+            onRouteChange={onRouteChange}
           />
           <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} />
         </div>
