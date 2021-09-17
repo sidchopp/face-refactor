@@ -98,33 +98,35 @@ function MainPage() {
   }
   return (
     <>
-      <Grid container component="main" className={classes.root}>
-        <CssBaseline />
-        {/* <LeftPartImage /> */}
+
+      {/* <LeftPartImage /> */}
 
 
-        {/* <RightPartSignIn />
+      {/* <RightPartSignIn />
         <ImageLinkForm
           onInputChange={onInputChange}
           onButtonSubmit={onButtonSubmit}
         /> */}
-        {route === 'home'
-          ? <div>
-            <ImageLinkForm
-              onInputChange={onInputChange}
-              onButtonSubmit={onButtonSubmit}
-            />
-            <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} />
-          </div>
-          : (
-            route === 'signIn'
-              ? <><LeftPartImage />
-                <RightPartSignIn onRouteChange={onRouteChange} /></>
-              : <Register onRouteChange={onRouteChange} />
-          )
-        }
+      {route === 'home'
+        ? <div>
+          <ImageLinkForm
+            onInputChange={onInputChange}
+            onButtonSubmit={onButtonSubmit}
+          />
+          <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} />
+        </div>
+        : (
+          route === 'signIn'
+            ? <Grid container component="main" className={classes.root}>
+              <CssBaseline /><LeftPartImage />
+              <RightPartSignIn onRouteChange={onRouteChange} />
+            </Grid>
+            : <Register onRouteChange={onRouteChange} />
 
-      </Grid>
+        )
+      }
+
+
 
       {/* <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} /> */}
 
