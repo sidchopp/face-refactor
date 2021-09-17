@@ -66,7 +66,7 @@ export default function Register({ onRouteChange }) {
               label="Email Address"
               name="email"
               autoComplete="email"
-              autoFocus
+
             />
             <TextField
               margin="normal"
