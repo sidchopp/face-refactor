@@ -42,6 +42,7 @@ function MainPage() {
   const [errorMessage, setErrorMessage] = useState("")
   const [route, setRoute] = useState('signIn')
   const [isSignedIn, setIsSignedIn] = useState(false)
+  const [loading, setLoading] = useState(true);
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
