@@ -13,6 +13,7 @@ import RightPartSignIn from './RightPartSignIn'
 import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
+import Spinner from './Spinner';
 
 const useStyles = makeStyles((theme) => ({
   root: {
