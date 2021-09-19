@@ -49,10 +49,10 @@ function MainPage() {
     console.log('from clarifai', clarifaiFace);
     // we are referencing the img attribute of id in the FaceRecognition component
     const image = document.getElementById('inputImage');
-    console.log(image);
+    // console.log(image);
     const width = Number(image.width);
     const height = Number(image.height);
-    console.log(width, height);
+    // console.log(width, height);
     // this will return an OBJECT
     return {
       leftCol: clarifaiFace.left_col * width,
@@ -71,7 +71,7 @@ function MainPage() {
 
   function onInputChange(e) {
     e.preventDefault();
-    console.log(e.target.value);
+    //console.log(e.target.value);
     // To make the state value of userInput equals what we write in the input field
     setUserInput(e.target.value)
   }
@@ -88,7 +88,7 @@ function MainPage() {
       .then(function (response) {
         console.log("Response from API:", response);
         // do something with response
-        console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+        // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         displayFaceBox(faceLocation(response))
       }
       ).catch(err => console.log(err));
