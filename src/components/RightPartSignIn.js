@@ -52,9 +52,29 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
+// Event Handlers
+// function onRouteChange(e) {
+//   console.log(e.target.value);
+// }
+
+function onEmailChange(e) {
+  e.preventDefault()
+  setSignInEmail(e.target.value)
+}
+
+function onPasswordChange(e) {
+  e.preventDefault()
+  setSignInPassword(e.target.value)
+}
+
 
 function RightPartSignIn({ onRouteChange }) {
   const classes = useStyles();
+
+  // States
+  const [signInEmail, setSignInEmail] = useState("");
+  const [signInPassword, setSignInPassword] = useState("");
+
   return (
 
     <Grid style={{ background: '#ED820E ' }} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
@@ -72,6 +92,9 @@ function RightPartSignIn({ onRouteChange }) {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
+
+        {/* Sign in form starts below */}
+
         <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
@@ -116,6 +139,8 @@ function RightPartSignIn({ onRouteChange }) {
             </Grid>
           </Grid>
           <Box mt={10}>
+
+            {/* Sign in form ends above */}
 
             {/* Component Import */}
             <Footer />
