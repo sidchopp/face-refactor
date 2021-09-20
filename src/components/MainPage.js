@@ -14,6 +14,7 @@ import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
 //import Spinner from './Spinner';
+import Rank from './Rank';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -122,11 +123,11 @@ function MainPage() {
     setRoute(route)
   }
 
-
   return (
     <>
       {route === 'home'
         ? <div>
+          <Rank name={user.name} entries={user.entries} />
           <ImageLinkForm
             onInputChange={onInputChange}
             onButtonSubmit={onButtonSubmit}
@@ -138,7 +139,7 @@ function MainPage() {
           route === 'signIn'
             ? <Grid container component="main" className={classes.root}>
               <CssBaseline /><LeftPartImage />
-              <RightPartSignIn onRouteChange={onRouteChange} />
+              <RightPartSignIn loadUser={loadUser} onRouteChange={onRouteChange} />
             </Grid>
             : <Register loadUser={loadUser} onRouteChange={onRouteChange} />
         )
