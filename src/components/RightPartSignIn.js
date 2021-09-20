@@ -67,6 +67,12 @@ function onPasswordChange(e) {
   setSignInPassword(e.target.value)
 }
 
+function onSubmitSignIn() {
+  console.log(signInEmail, signInPassword);
+  onRouteChange('home')
+
+}
+
 
 function RightPartSignIn({ onRouteChange }) {
   const classes = useStyles();
