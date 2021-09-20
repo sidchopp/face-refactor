@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -13,7 +13,7 @@ import RightPartSignIn from './RightPartSignIn'
 import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
-import Spinner from './Spinner';
+//import Spinner from './Spinner';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,10 +39,10 @@ function MainPage() {
   const [userInput, setUserInput] = useState('');
   const [imageURL, setImageURL] = useState(" ");
   const [boundingBox, setBoundingBox] = useState({});
-  const [errorMessage, setErrorMessage] = useState("")
+  //const [errorMessage, setErrorMessage] = useState("")
   const [route, setRoute] = useState('signIn')
   const [isSignedIn, setIsSignedIn] = useState(false)
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -88,11 +88,14 @@ function RightPartSignIn({ onRouteChange }) {
         email: signInEmail,
         password: signInPassword
       })
-    });
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data === 'Success!!')
+          console.log(signInEmail, signInPassword);
+        onRouteChange('home')
+      })
     ////// Back end fetching above
-
-    console.log(signInEmail, signInPassword);
-    onRouteChange('home')
   }
 
   return (
