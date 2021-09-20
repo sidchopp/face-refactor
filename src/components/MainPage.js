@@ -103,19 +103,7 @@ function MainPage() {
     setRoute(route)
   }
 
-  ////// Fetching data from backend server
 
-  const dataFromServer = async function () {
-    const response = await fetch("http://localhost:4000");
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-  }
-  useEffect(() => {
-    dataFromServer()
-  }, [])
-
-  ////// Back end fetching above
   return (
     <>
       {route === 'home'

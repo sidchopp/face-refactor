@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -77,14 +77,25 @@ function RightPartSignIn({ onRouteChange }) {
     setSignInPassword(e.target.value)
   }
 
-  function onSubmitSignIn() {
+  // for useEffect to work React component must start with an uppercase letter
+  function OnSubmitSignIn() {
+
+    ////// Fetching data from backend server
+    fetch("http://localhost:4000/signIn", {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: signInEmail,
+        password: signInPassword
+      })
+    });
+    ////// Back end fetching above
+
     console.log(signInEmail, signInPassword);
     onRouteChange('home')
-
   }
 
   return (
-
     <Grid style={{ background: '#ED820E ' }} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
       <div className={classes.paper}>
         <div className={classes.heroContent}>
@@ -135,7 +146,7 @@ function RightPartSignIn({ onRouteChange }) {
             color="primary"
             className={classes.submit}
             startIcon={<HowToRegIcon />}
-            onClick={onSubmitSignIn}
+            onClick={OnSubmitSignIn}
           >
             Sign In
           </Button>
