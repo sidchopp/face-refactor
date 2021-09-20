@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -57,21 +57,7 @@ const useStyles = makeStyles((theme) => ({
 //   console.log(e.target.value);
 // }
 
-function onEmailChange(e) {
-  e.preventDefault()
-  setSignInEmail(e.target.value)
-}
 
-function onPasswordChange(e) {
-  e.preventDefault()
-  setSignInPassword(e.target.value)
-}
-
-function onSubmitSignIn() {
-  console.log(signInEmail, signInPassword);
-  onRouteChange('home')
-
-}
 
 
 function RightPartSignIn({ onRouteChange }) {
@@ -80,6 +66,22 @@ function RightPartSignIn({ onRouteChange }) {
   // States
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+
+  function onEmailChange(e) {
+    e.preventDefault()
+    setSignInEmail(e.target.value)
+  }
+
+  function onPasswordChange(e) {
+    e.preventDefault()
+    setSignInPassword(e.target.value)
+  }
+
+  function onSubmitSignIn() {
+    console.log(signInEmail, signInPassword);
+    onRouteChange('home')
+
+  }
 
   return (
 
@@ -112,7 +114,7 @@ function RightPartSignIn({ onRouteChange }) {
             name="email"
             autoComplete="email"
             autoFocus
-          // onChange={onEmailChange}
+            onChange={onEmailChange}
           />
           <TextField
             variant="outlined"
@@ -124,7 +126,7 @@ function RightPartSignIn({ onRouteChange }) {
             type="password"
             id="password"
             autoComplete="current-password"
-          // onChange={onPasswordChange}
+            onChange={onPasswordChange}
           />
           <Button
             type="button"
@@ -133,7 +135,7 @@ function RightPartSignIn({ onRouteChange }) {
             color="primary"
             className={classes.submit}
             startIcon={<HowToRegIcon />}
-            onClick={() => onRouteChange('home')}
+            onClick={onSubmitSignIn}
           >
             Sign In
           </Button>
