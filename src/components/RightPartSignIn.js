@@ -77,8 +77,8 @@ function RightPartSignIn({ onRouteChange }) {
     setSignInPassword(e.target.value)
   }
 
-  // for useEffect to work React component must start with an uppercase letter
-  function OnSubmitSignIn() {
+
+  function onSubmitSignIn() {
 
     ////// Fetching data from backend server
     fetch("http://localhost:4000/signIn", {
@@ -149,7 +149,7 @@ function RightPartSignIn({ onRouteChange }) {
             color="primary"
             className={classes.submit}
             startIcon={<HowToRegIcon />}
-            onClick={OnSubmitSignIn}
+            onClick={onSubmitSignIn}
           >
             Sign In
           </Button>

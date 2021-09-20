@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,15 +19,56 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function Register({ onRouteChange }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   // eslint-disable-next-line no-console
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
+
+  // States
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+
+  function onEmailChange(e) {
+    e.preventDefault()
+    setEmail(e.target.value)
+  }
+
+  function onPasswordChange(e) {
+    e.preventDefault()
+    setPassword(e.target.value)
+  }
+  function onNameChange(e) {
+    e.preventDefault()
+    setName(e.target.value)
+  }
+
+  // for useEffect to work React component must start with an uppercase letter
+  function OnSubmitSignIn() {
+
+    ////// Fetching data from backend server
+    fetch("http://localhost:4000/register", {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+        name: name
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data === 'Success!!')
+          console.log(email, password);
+        onRouteChange('home')
+      })
+    ////// Back end fetching above
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -47,7 +88,8 @@ export default function Register({ onRouteChange }) {
           <Typography component="h1" variant="h5">
             New User Register
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          {/* onSubmit={handleSubmit} */}
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
