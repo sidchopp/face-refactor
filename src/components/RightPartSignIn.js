@@ -78,7 +78,8 @@ function RightPartSignIn({ onRouteChange }) {
   }
 
 
-  function onSubmitSignIn() {
+  function onSubmitSignIn(e) {
+    e.preventDefault()
 
     ////// Fetching data from backend server
     fetch("http://localhost:4000/signIn", {

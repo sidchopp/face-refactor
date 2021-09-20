@@ -18,7 +18,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export default function Register({ onRouteChange }) {
+export default function Register({ onRouteChange, loadUser }) {
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
@@ -49,7 +49,8 @@ export default function Register({ onRouteChange }) {
   }
 
   // for useEffect to work React component must start with an uppercase letter
-  function OnSubmitSignIn() {
+  function OnSubmitSignIn(e) {
+    e.preventDefault();
 
     ////// Fetching data from backend server
     fetch("http://localhost:4000/register", {
@@ -62,9 +63,9 @@ export default function Register({ onRouteChange }) {
       })
     })
       .then(response => response.json())
-      .then(data => {
-        if (data === 'Success!!')
-          console.log(email, password);
+      .then(user => {
+        if (user)
+          loadUser(user)
         onRouteChange('home')
       })
     ////// Back end fetching above
@@ -89,7 +90,7 @@ export default function Register({ onRouteChange }) {
             New User Register
           </Typography>
           {/* onSubmit={handleSubmit} */}
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={OnSubmitSignIn} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -99,6 +100,7 @@ export default function Register({ onRouteChange }) {
               name="name"
               autoComplete="name"
               autoFocus
+              onChange={onNameChange}
             />
             <TextField
               margin="normal"
@@ -108,7 +110,7 @@ export default function Register({ onRouteChange }) {
               label="Email Address"
               name="email"
               autoComplete="email"
-
+              onChange={onEmailChange}
             />
             <TextField
               margin="normal"
@@ -118,7 +120,8 @@ export default function Register({ onRouteChange }) {
               label="Password"
               type="password"
               id="password"
-              autoComplete="current-password"
+              // autoComplete="current-password"
+              onChange={onPasswordChange}
             />
 
             <Button
@@ -126,7 +129,7 @@ export default function Register({ onRouteChange }) {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={onRouteChange}
+            // onClick={OnSubmitSignIn}
             >
               Register
             </Button>
@@ -138,6 +141,6 @@ export default function Register({ onRouteChange }) {
         </Box>
 
       </Container>
-    </ThemeProvider>
+    </ThemeProvider >
   );
 }

@@ -43,6 +43,25 @@ function MainPage() {
   const [route, setRoute] = useState('signIn')
   const [isSignedIn, setIsSignedIn] = useState(false)
   //const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState({
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: ''
+  });
+
+  function loadUser(data) {
+    setUser({
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      entries: data.entries,
+      joined: data.joined
+    })
+
+  }
+
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -121,7 +140,7 @@ function MainPage() {
               <CssBaseline /><LeftPartImage />
               <RightPartSignIn onRouteChange={onRouteChange} />
             </Grid>
-            : <Register onRouteChange={onRouteChange} />
+            : <Register loadUser={loadUser} onRouteChange={onRouteChange} />
         )
       }
     </>
