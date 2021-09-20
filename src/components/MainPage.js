@@ -106,9 +106,19 @@ function MainPage() {
     // face detect api using FACE_DETECT_MODEL is predicting our userInput state value
     app.models.predict(Clarifai.FACE_DETECT_MODEL, userInput)
       .then(function (response) {
-        console.log("Response from API:", response);
+        //console.log("Response from API:", response);
         // do something with response
         // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
+        if (response) {
+          fetch('http://localhost:4000/image', {
+            method: 'put',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: user.id
+            })
+          })
+
+        }
         displayFaceBox(faceLocation(response))
       }
       ).catch(err => console.log(err));
@@ -132,6 +142,8 @@ function MainPage() {
             onInputChange={onInputChange}
             onButtonSubmit={onButtonSubmit}
             onRouteChange={onRouteChange}
+            name={user.name}
+            entries={user.entries}
           />
           <FaceRecognition boundingBox={boundingBox} imageURL={imageURL} />
         </div>

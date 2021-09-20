@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function RightPartSignIn({ onRouteChange }) {
+function RightPartSignIn({ onRouteChange, loadUser }) {
   const classes = useStyles();
 
   // States
@@ -91,9 +91,9 @@ function RightPartSignIn({ onRouteChange }) {
       })
     })
       .then(response => response.json())
-      .then(data => {
-        if (data === 'Success!!')
-          console.log(signInEmail, signInPassword);
+      .then(user => {
+        if (user.id)
+          loadUser(user)
         onRouteChange('home')
       })
     ////// Back end fetching above
