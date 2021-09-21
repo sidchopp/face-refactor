@@ -117,6 +117,10 @@ function MainPage() {
               id: user.id
             })
           })
+            .then(response => response.json())
+            .then(count => {
+              setUser(Object.assign(user, { entries: count }))
+            })
 
         }
         displayFaceBox(faceLocation(response))
