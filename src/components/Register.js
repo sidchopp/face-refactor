@@ -53,7 +53,7 @@ export default function Register({ onRouteChange, loadUser }) {
     e.preventDefault();
 
     ////// Fetching data from backend server
-    fetch("http://localhost:4000/register", {
+    fetch("http://localhost:3000/register", {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
