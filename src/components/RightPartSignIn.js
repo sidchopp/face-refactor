@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-function RightPartSignIn({ onRouteChange, loadUser }) {
+function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
   const classes = useStyles();
 
   // States
@@ -82,7 +82,7 @@ function RightPartSignIn({ onRouteChange, loadUser }) {
     e.preventDefault()
 
     ////// Fetching data from backend server
-    fetch("http://localhost:4000/signIn", {
+    fetch("http://localhost:3000/signIn", {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -92,9 +92,14 @@ function RightPartSignIn({ onRouteChange, loadUser }) {
     })
       .then(response => response.json())
       .then(user => {
-        if (user.id)
+        console.log(user);
+        if (user.id) {
+
           loadUser(user)
-        onRouteChange('home')
+          onRouteChange('home')
+        } else {
+          setRoute('signIn')
+        }
       })
     ////// Back end fetching above
   }

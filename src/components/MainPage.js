@@ -110,7 +110,7 @@ function MainPage() {
         // do something with response
         // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         if (response) {
-          fetch('http://localhost:4000/image', {
+          fetch('http://localhost:3000/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -155,7 +155,7 @@ function MainPage() {
           route === 'signIn'
             ? <Grid container component="main" className={classes.root}>
               <CssBaseline /><LeftPartImage />
-              <RightPartSignIn loadUser={loadUser} onRouteChange={onRouteChange} />
+              <RightPartSignIn loadUser={loadUser} onRouteChange={onRouteChange} setRoute={setRoute} />
             </Grid>
             : <Register loadUser={loadUser} onRouteChange={onRouteChange} />
         )
