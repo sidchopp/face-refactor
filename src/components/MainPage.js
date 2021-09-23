@@ -141,7 +141,7 @@ function MainPage() {
     <>
       {route === 'home'
         ? <div>
-          <Rank name={user.name} entries={user.entries} />
+          {/* <Rank name={user.name} entries={user.entries} /> */}
           <ImageLinkForm
             onInputChange={onInputChange}
             onButtonSubmit={onButtonSubmit}
