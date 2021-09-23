@@ -157,7 +157,7 @@ function MainPage() {
               <CssBaseline /><LeftPartImage />
               <RightPartSignIn loadUser={loadUser} onRouteChange={onRouteChange} setRoute={setRoute} />
             </Grid>
-            : <Register loadUser={loadUser} onRouteChange={onRouteChange} />
+            : <Register loadUser={loadUser} onRouteChange={onRouteChange} setRoute={setRoute} />
         )
       }
     </>

@@ -18,7 +18,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export default function Register({ onRouteChange, loadUser }) {
+export default function Register({ onRouteChange, loadUser, setRoute }) {
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
@@ -64,9 +64,13 @@ export default function Register({ onRouteChange, loadUser }) {
     })
       .then(response => response.json())
       .then(user => {
-        if (user)
+        console.log(user);
+        if (user) {
           loadUser(user)
-        onRouteChange('home')
+          onRouteChange('home')
+        } else {
+          setRoute('register')
+        }
       })
     ////// Back end fetching above
   }
@@ -90,7 +94,7 @@ export default function Register({ onRouteChange, loadUser }) {
             New User Register
           </Typography>
           {/* onSubmit={handleSubmit} */}
-          <Box component="form" onSubmit={OnSubmitSignIn} noValidate sx={{ mt: 1 }}>
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -109,6 +113,7 @@ export default function Register({ onRouteChange, loadUser }) {
               id="email"
               label="Email Address"
               name="email"
+              type="email"
               autoComplete="email"
               onChange={onEmailChange}
             />
@@ -129,7 +134,7 @@ export default function Register({ onRouteChange, loadUser }) {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-            // onClick={OnSubmitSignIn}
+              onClick={OnSubmitSignIn}
             >
               Register
             </Button>
