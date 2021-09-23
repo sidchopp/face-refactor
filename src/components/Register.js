@@ -65,11 +65,12 @@ export default function Register({ onRouteChange, loadUser, setRoute }) {
       .then(response => response.json())
       .then(user => {
         console.log(user);
-        if (user) {
+        if (user.id) {
           loadUser(user)
           onRouteChange('home')
         } else {
           setRoute('register')
+          // onRouteChange('signIn')
         }
       })
     ////// Back end fetching above
