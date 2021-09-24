@@ -11,6 +11,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
+//Email Validator
+var validator = require("email-validator");
+
 const theme = createTheme();
 
 function Register({ onRouteChange, loadUser, setRoute }) {
@@ -19,11 +22,16 @@ function Register({ onRouteChange, loadUser, setRoute }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [validEmail, setValidEmail] = useState(true)
 
   // Event Handlers
   function onEmailChange(e) {
     e.preventDefault()
-    setEmail(e.target.value)
+    if (validator.validate(e.target.value)) {
+      setEmail(e.target.value)
+    } else {
+      setValidEmail(false)
+    }
   }
 
   function onPasswordChange(e) {
@@ -83,6 +91,7 @@ function Register({ onRouteChange, loadUser, setRoute }) {
           <Typography style={{ marginBottom: '15px' }} component="h1" variant="h5">
             New User
           </Typography>
+
           {/* onSubmit={handleSubmit} */}
           <Box component="form" noValidate sx={{ mt: 1 }}>
             <TextField
