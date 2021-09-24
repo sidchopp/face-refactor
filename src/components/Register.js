@@ -115,7 +115,7 @@ function Register({ onRouteChange, loadUser, setRoute }) {
               label="Password"
               type="password"
               id="password"
-              // autoComplete="current-password"
+              autoComplete="current-password"
               onChange={onPasswordChange}
             />
             <Button

@@ -105,7 +105,8 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
   }
 
   return (
-    <Grid style={{ background: '#ED820E ' }} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+    // style={{ background: '#ED820E ' }}
+    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
       <div className={classes.paper}>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">

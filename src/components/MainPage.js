@@ -14,7 +14,7 @@ import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
 //import Spinner from './Spinner';
-import Rank from './Rank';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +66,7 @@ function MainPage() {
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
-    console.log('from clarifai', clarifaiFace);
+    //console.log('from clarifai', clarifaiFace);
     // we are referencing the img attribute of id in the FaceRecognition component
     const image = document.getElementById('inputImage');
     // console.log(image);
@@ -83,7 +83,7 @@ function MainPage() {
   }
 
   function displayFaceBox(box) {
-    console.log(box);
+    //console.log(box);
     setBoundingBox(box)
   }
 
