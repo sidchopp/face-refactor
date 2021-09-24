@@ -22,16 +22,17 @@ function Register({ onRouteChange, loadUser, setRoute }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
-  const [validEmail, setValidEmail] = useState(true)
+  // const [validEmail, setValidEmail] = useState(true)
 
   // Event Handlers
   function onEmailChange(e) {
     e.preventDefault()
     if (validator.validate(e.target.value)) {
       setEmail(e.target.value)
-    } else {
-      setValidEmail(false)
     }
+    // else {
+    //   setValidEmail(false)
+    // }
   }
 
   function onPasswordChange(e) {
