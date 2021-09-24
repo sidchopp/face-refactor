@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
+//MUI
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 
+//Clarifai
 import Clarifai from 'clarifai'
 
 //Components
@@ -60,9 +62,7 @@ function MainPage() {
       entries: data.entries,
       joined: data.joined
     })
-
   }
-
 
   function faceLocation(data) {
     const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
@@ -121,7 +121,6 @@ function MainPage() {
             .then(count => {
               setUser(Object.assign(user, { entries: count }))
             })
-
         }
         displayFaceBox(faceLocation(response))
       }

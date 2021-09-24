@@ -15,15 +15,12 @@ import "animate.css"
 
 
 // Components
-
 import Footer from './Footer'
 
 //CSS
-
 import '../App.css'
 
 // Material UI styles
-
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
@@ -52,13 +49,6 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-// Event Handlers
-// function onRouteChange(e) {
-//   console.log(e.target.value);
-// }
-
-
-
 
 function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
   const classes = useStyles();
@@ -67,6 +57,7 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
 
+  //  Event Handlers
   function onEmailChange(e) {
     e.preventDefault()
     setSignInEmail(e.target.value)
@@ -76,7 +67,6 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
     e.preventDefault()
     setSignInPassword(e.target.value)
   }
-
 
   function onSubmitSignIn(e) {
     e.preventDefault()
@@ -92,7 +82,7 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
     })
       .then(response => response.json())
       .then(user => {
-        console.log(user);
+        // console.log(user);
         if (user.id) {
 
           loadUser(user)
@@ -179,8 +169,7 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
         </form>
       </div>
     </Grid>
-
   )
 }
 
-export default RightPartSignIn
+export default RightPartSignIn;

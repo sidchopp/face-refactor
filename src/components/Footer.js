@@ -4,7 +4,6 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Link from '@material-ui/core/Link';
 
 //CSS
-
 import '../App.css'
 
 function Footer() {
