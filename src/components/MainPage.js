@@ -110,7 +110,9 @@ function MainPage() {
         // do something with response
         // console.log(response.outputs[0].data.regions[0].region_info.bounding_box);
         if (response) {
-          fetch('http://localhost:3000/image', {
+
+          // fetch('http://localhost:3000/image', { is replaced by the link from heroku backend server
+          fetch('https://secure-atoll-87375.herokuapp.com/image', {
             method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -49,7 +49,7 @@ function Register({ onRouteChange, loadUser, setRoute }) {
     e.preventDefault();
 
     ////// Fetching data from backend server
-    fetch("http://localhost:3000/register", {
+    fetch("https://secure-atoll-87375.herokuapp.com/register", {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
