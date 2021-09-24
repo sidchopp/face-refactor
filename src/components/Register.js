@@ -90,8 +90,11 @@ export default function Register({ onRouteChange, loadUser, setRoute }) {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <HowToRegIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">
-            New User Register
+          <Typography component="h1" variant="h3">
+            Welcome!
+          </Typography>
+          <Typography style={{ marginBottom: '15px' }} component="h1" variant="h5">
+            New User
           </Typography>
           {/* onSubmit={handleSubmit} */}
           <Box component="form" noValidate sx={{ mt: 1 }}>
