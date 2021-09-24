@@ -9,7 +9,7 @@ import '../App.css'
 
 function Footer() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography component={'span'} variant="body2" color="textSecondary" align="center">
       <div>
         <Link color="primary" href="https://github.com/sidchopp" target="_blank">
           <GitHubIcon />
