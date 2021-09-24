@@ -1,14 +1,11 @@
 import React from 'react';
 
-const Rank = ({ name, entries }) => {
+const Rank = ({ entries }) => {
   return (
     <div>
-      <div >
-        {`${name}, your current entry count is...`}{entries}
-      </div>
-      <div >
-
-      </div>
+      <h4>
+        {`Number of times you have used this App before: ${entries}`}
+      </h4>
     </div>
   );
 }

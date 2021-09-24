@@ -14,6 +14,9 @@ import SearchIcon from '@material-ui/icons/Search';
 
 import Rank from './Rank';
 
+//CSS
+import '../App.css'
+
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
@@ -48,8 +51,8 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, ent
       <Avatar className={classes.avatar}>
         <EmojiEmotionsIcon />
       </Avatar>
-      <Typography component="h1" variant="h5">
-        Welcome
+      <Typography component="h1" variant="h4">
+        Welcome! <span className='welcome'>{name}</span>
       </Typography>
       <Rank name={name} entries={entries} />
       <form className={classes.form} noValidate>
@@ -59,7 +62,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, ent
           required
           fullWidth
           id="url"
-          label=" Enter the URL"
+          label=" Enter the URL of the Image (with a face & press 'Detect')"
           name="url"
           autoFocus
           onChange={onInputChange}
@@ -81,7 +84,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, ent
       <Button
         type="button"
         variant="contained"
-        color="warning"
+        color="secondary"
         className={classes.submit}
         endIcon={<ExitToAppIcon />}
         onClick={() => onRouteChange('signIn')}
