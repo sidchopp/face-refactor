@@ -48,7 +48,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, ent
         <EmojiEmotionsIcon />
       </Avatar>
       <Typography component="h1" variant="h4">
-        Welcome! <span className='welcome'>{name}</span>
+        Welcome <span className='welcome'> {name}!</span>
       </Typography>
       <Rank name={name} entries={entries} />
       <form className={classes.form} noValidate>
