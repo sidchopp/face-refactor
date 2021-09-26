@@ -101,7 +101,7 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom className="animate__animated animate__pulse">
-              <span className='face-detection'>Face Detection</span>
+              <span className='face-detection'>Face Detect</span>
             </Typography>
           </Container>
         </div>
