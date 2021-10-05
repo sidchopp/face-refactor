@@ -19,7 +19,7 @@ function Footer() {
       </div>
       <div>
         {' © '}
-        <Link href="https://material-ui.com/">
+        <Link href="https://sid-projects.netlify.app/" target="_blank">
           <span className="face-detection">SID</span>
         </Link>{' '}
         {/* {new Date().getFullYear()} */}
