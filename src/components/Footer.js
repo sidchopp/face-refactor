@@ -8,7 +8,7 @@ import '../App.css'
 
 function Footer() {
   return (
-    <Typography component={'span'} variant="body2" color="textSecondary" align="center">
+    <Typography component={'span'} variant="h6" color="textPrimary" align="center">
       <div>
         <Link color="primary" href="https://github.com/sidchopp" target="_blank">
           <GitHubIcon />
@@ -18,9 +18,13 @@ function Footer() {
         </Link>
       </div>
       <div>
-        {'Sid © '}
-        {new Date().getFullYear()}
-        {'.'}</div>
+        {' © '}
+        <Link href="https://material-ui.com/">
+          <span className="face-detection">SID</span>
+        </Link>{' '}
+        {/* {new Date().getFullYear()} */}
+        {/* {'.'} */}
+      </div>
     </Typography>
   );
 }
