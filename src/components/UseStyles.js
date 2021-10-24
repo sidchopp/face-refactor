@@ -1,5 +1,7 @@
-// Material UI styles
+//Components
+import Face from '../images/face.jpg'
 
+// Material UI styles
 import { makeStyles } from '@material-ui/core/styles';
 
 const UseStyles = makeStyles((theme) => ({
@@ -26,6 +28,14 @@ const UseStyles = makeStyles((theme) => ({
   heroContent: {
     // backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(1, 0, 4),
+  },
+  image: {
+    backgroundImage: `url(${Face})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundColor:
+      theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
 
 }));
