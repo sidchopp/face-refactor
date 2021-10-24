@@ -45,6 +45,8 @@ function MainPage() {
   const [boundingBox, setBoundingBox] = useState({});
   //const [errorMessage, setErrorMessage] = useState("")
   const [route, setRoute] = useState('signIn')
+
+  // eslint-disable-next-line no-unused-vars
   const [isSignedIn, setIsSignedIn] = useState(false)
   //const [loading, setLoading] = useState(true);
   const [user, setUser] = useState({
