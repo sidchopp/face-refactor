@@ -3,7 +3,7 @@ import Face from '../images/face.jpg'
 
 // Material UI styles
 import { makeStyles } from '@material-ui/core/styles';
-// eslint-disable-next-line no-unused-vars
+
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 
