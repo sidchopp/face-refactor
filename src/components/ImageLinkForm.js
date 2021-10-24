@@ -5,40 +5,42 @@ import Grid from '@material-ui/core/Grid';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 
+//Components
 import Rank from './Rank';
+import UseStyles from './UseStyles';
 
 //CSS
 import '../App.css'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
-  paper: {
-    margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     height: '100vh',
+//   },
+//   paper: {
+//     margin: theme.spacing(8, 4),
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//   },
+//   avatar: {
+//     margin: theme.spacing(1),
+//     backgroundColor: theme.palette.primary.main,
+//   },
+//   form: {
+//     width: '100%', // Fix IE 11 issue.
+//     marginTop: theme.spacing(1),
+//   },
+//   submit: {
+//     margin: theme.spacing(3, 0, 2),
+//   },
+// }));
 
 
 function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, entries }) {
-  const classes = useStyles();
+  const classes = UseStyles();
 
   return (
     // Add this as an attribute in Grid -->  component={Paper}
