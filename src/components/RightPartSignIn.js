@@ -8,7 +8,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import HowToRegIcon from '@material-ui/icons/HowToReg';
 import Container from '@material-ui/core/Container';
 import "animate.css"
@@ -16,42 +16,43 @@ import "animate.css"
 
 // Components
 import Footer from './Footer'
+import UseStyles from './UseStyles'
 
 //CSS
 import '../App.css'
 
 // Material UI styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: '100vh',
-  },
-  paper: {
-    margin: theme.spacing(8, 4),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(1),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-  heroContent: {
-    // backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(1, 0, 4),
-  },
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     height: '100vh',
+//   },
+//   paper: {
+//     margin: theme.spacing(8, 4),
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//   },
+//   avatar: {
+//     margin: theme.spacing(1),
+//     backgroundColor: theme.palette.secondary.main,
+//   },
+//   form: {
+//     width: '100%', // Fix IE 11 issue.
+//     marginTop: theme.spacing(1),
+//   },
+//   submit: {
+//     margin: theme.spacing(3, 0, 2),
+//   },
+//   heroContent: {
+//     // backgroundColor: theme.palette.background.paper,
+//     padding: theme.spacing(1, 0, 4),
+//   },
 
-}));
+// }));
 
 
 function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
-  const classes = useStyles();
+  const classes = UseStyles();
 
   // States
   const [signInEmail, setSignInEmail] = useState("");
