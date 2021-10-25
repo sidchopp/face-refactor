@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 //MUI
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
-// import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 //Clarifai
 import Clarifai from 'clarifai'
@@ -15,21 +15,21 @@ import RightPartSignIn from './RightPartSignIn'
 import Register from './Register';
 import ImageLinkForm from './ImageLinkForm';
 import FaceRecognition from './FaceRecognition';
-import UseStyles from './UseStyles';
+// import UseStyles from './UseStyles';
 //import Spinner from './Spinner';
 
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     height: '100vh',
-//   },
-//   paper: {
-//     margin: theme.spacing(8, 4),
-//     display: 'flex',
-//     flexDirection: 'column',
-//     alignItems: 'center',
-//   },
-// }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: '100vh',
+  },
+  paper: {
+    margin: theme.spacing(8, 4),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+}));
 
 // Clarifai API
 const app = new Clarifai.App({
@@ -37,7 +37,7 @@ const app = new Clarifai.App({
 });
 
 function MainPage() {
-  const classes = UseStyles();
+  const classes = useStyles();
 
   //states
   const [userInput, setUserInput] = useState('');

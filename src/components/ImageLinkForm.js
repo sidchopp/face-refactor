@@ -46,7 +46,7 @@ function ImageLinkForm({ onInputChange, onButtonSubmit, onRouteChange, name, ent
     // Add this as an attribute in Grid -->  component={Paper}
     // <Grid item xs={12} sm={8} md={12} elevation={6} square>
     <div className={classes.paper}>
-      <Avatar className={classes.avatar}>
+      <Avatar className={classes.avatarSignedIn}>
         <EmojiEmotionsIcon />
       </Avatar>
       <Typography component="h1" variant="h4">

@@ -4,9 +4,6 @@ import Face from '../images/face.jpg'
 // Material UI styles
 import { makeStyles } from '@material-ui/core/styles';
 
-import CssBaseline from '@material-ui/core/CssBaseline';
-
-
 const UseStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
@@ -17,7 +14,11 @@ const UseStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
   },
-  avatar: {
+  avatarSignIn: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  avatarSignedIn: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main,
   },

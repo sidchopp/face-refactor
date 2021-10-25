@@ -106,7 +106,7 @@ function RightPartSignIn({ onRouteChange, loadUser, setRoute }) {
             </Typography>
           </Container>
         </div>
-        <Avatar className={classes.avatar}>
+        <Avatar className={classes.avatarSignIn}>
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
